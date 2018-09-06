@@ -9,18 +9,13 @@ import { Link } from 'react-router-dom'
 import withStyles from '@material-ui/core/styles/withStyles'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
-
 import Home from '@material-ui/icons/Home'
 // @material-ui/icons
 import Apps from '@material-ui/icons/Apps'
-
 import Dns from '@material-ui/icons/Dns'
 import Build from '@material-ui/icons/Build'
 import ListIcon from '@material-ui/icons/List'
-import People from '@material-ui/icons/People'
 import Assignment from '@material-ui/icons/Assignment'
-import MonetizationOn from '@material-ui/icons/MonetizationOn'
-import Chat from '@material-ui/icons/Chat'
 import Call from '@material-ui/icons/Call'
 
 // core components
@@ -37,7 +32,7 @@ function HeaderLinks({ ...props }) {
 	}
 
 	const smoothScroll = (e, target) => {
-		if (window.location.pathname === '/sections') {
+		if (window.location.pathname === '/home') {
 			var isMobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)
 			if (isMobile) {
 				// if we are on mobile device the scroll into view will be managed by the browser
@@ -86,58 +81,40 @@ function HeaderLinks({ ...props }) {
 					buttonIcon={Apps}
 					dropdownList={[
 						<Link
-							to="/sections#headers"
+							to="/home#Headers"
 							className={classes.dropdownLink}
-							onClick={(e) => smoothScroll(e, 'headers')}
+							onClick={(e) => smoothScroll(e, 'Headers')}
 						>
 							<Dns className={classes.dropdownIcons} /> Headers
 						</Link>,
+
 						<Link
-							to="/sections#features"
+							to="/home#About"
 							className={classes.dropdownLink}
-							onClick={(e) => smoothScroll(e, 'features')}
+							onClick={(e) => smoothScroll(e, 'About')}
 						>
-							<Build className={classes.dropdownIcons} /> Features
+							<ListIcon className={classes.dropdownIcons} /> About
+						</Link>,
+
+						<Link
+							to="/home#Skills"
+							className={classes.dropdownLink}
+							onClick={(e) => smoothScroll(e, 'Skills')}
+						>
+							<Build className={classes.dropdownIcons} /> Skills
 						</Link>,
 						<Link
-							to="/sections#blogs"
+							to="/home#Timeline"
 							className={classes.dropdownLink}
-							onClick={(e) => smoothScroll(e, 'blogs')}
+							onClick={(e) => smoothScroll(e, 'Timeline')}
 						>
-							<ListIcon className={classes.dropdownIcons} /> Blogs
+							<Assignment className={classes.dropdownIcons} /> Timeline
 						</Link>,
+
 						<Link
-							to="/sections#teams"
+							to="/home#Contacts"
 							className={classes.dropdownLink}
-							onClick={(e) => smoothScroll(e, 'teams')}
-						>
-							<People className={classes.dropdownIcons} /> Teams
-						</Link>,
-						<Link
-							to="/sections#projects"
-							className={classes.dropdownLink}
-							onClick={(e) => smoothScroll(e, 'projects')}
-						>
-							<Assignment className={classes.dropdownIcons} /> Projects
-						</Link>,
-						<Link
-							to="/sections#pricing"
-							className={classes.dropdownLink}
-							onClick={(e) => smoothScroll(e, 'pricing')}
-						>
-							<MonetizationOn className={classes.dropdownIcons} /> Pricing
-						</Link>,
-						<Link
-							to="/sections#testimonials"
-							className={classes.dropdownLink}
-							onClick={(e) => smoothScroll(e, 'testimonials')}
-						>
-							<Chat className={classes.dropdownIcons} /> Testimonials
-						</Link>,
-						<Link
-							to="/sections#contacts"
-							className={classes.dropdownLink}
-							onClick={(e) => smoothScroll(e, 'contacts')}
+							onClick={(e) => smoothScroll(e, 'Contacts')}
 						>
 							<Call className={classes.dropdownIcons} /> Contacts
 						</Link>

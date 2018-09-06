@@ -10,6 +10,7 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 
 // core components
+import Button from '../.././components/CustomButtons/Button.jsx'
 import Header from 'components/Header/Header.jsx'
 import Footer from 'components/Footer/Footer.jsx'
 import GridContainer from 'components/Grid/GridContainer.jsx'
@@ -20,15 +21,16 @@ import CardBody from 'components/Card/CardBody.jsx'
 import Badge from 'components/Badge/Badge.jsx'
 import Parallax from 'components/Parallax/Parallax.jsx'
 import Clearfix from 'components/Clearfix/Clearfix.jsx'
-import Button from 'components/CustomButtons/Button.jsx'
+// import Button from 'components/CustomButtons/Button.jsx'
 import SectionSkills from '../.././components/skill'
 import souhail from 'assets/img/faces/souhail.jpg'
 import dg6 from 'assets/img/dg6.jpg'
 import bg7 from 'assets/img/bg7.jpg'
 import bg12 from 'assets/img/bg12.jpg'
-import SectionBlogs from '../.././components/timeline'
+import Timeline from '../.././components/timeline'
 import profilePageStyle from 'assets/jss/material-kit-pro-react/views/profilePageStyle.jsx'
 import SectionContacts from '../.././components/contact'
+
 class ProfilePage extends React.Component {
 	componentDidMount() {
 		window.scrollTo(0, 0)
@@ -37,7 +39,7 @@ class ProfilePage extends React.Component {
 	render() {
 		const { classes, ...rest } = this.props
 		const imageClasses = classNames(classes.imgRaised, classes.imgRoundedCircle, classes.imgFluid)
-		const navImageClasses = classNames(classes.imgRounded, classes.imgGallery)
+
 		return (
 			<div>
 				<Header
@@ -56,7 +58,7 @@ class ProfilePage extends React.Component {
 					<div className={classes.container}>
 						<GridContainer justify="center">
 							<GridItem xs={12} sm={12} md={6}>
-								<div className={classes.profile}>
+								<div className={classes.profile} id="Headers">
 									<div>
 										<img src={souhail} alt="..." className={imageClasses} />
 									</div>
@@ -92,14 +94,14 @@ class ProfilePage extends React.Component {
 							</GridItem>
 						</GridContainer>
 						<div className={classNames(classes.description, classes.textCenter)}>
-							<p>
-								Perseverant, curious and hard-worker. This is my DNA. I am by the way a developper after
-								couple months. Trying to resolve a subject for many hours without stopping, help me to
-								refocus on myself. From behind an empty page-code I fall in love to achieve something.
-								In fact, I am truly passionnate in achieving the relevant targets . {' '}
-							</p>
+							<h5 className={classes.description}>
+								Perseverant, curious and hard-worker. This is my DNA. By the way, I am a developper
+								specialising in React and Material UI. Using the code to find solutions or create
+								something from scratch by working day and night, helps me to refocus on myself. In fact,
+								I am truly passionnate in achieving relevant targets . {' '}
+							</h5>
 						</div>
-						<div className={classes.profileTabs}>
+						<div className={classes.profileTabs} id="About">
 							<GridContainer>
 								<GridItem xs={12} sm={12} md={7} className={classes.gridItem}>
 									<h4 className={classes.title}>Projects</h4>
@@ -161,16 +163,16 @@ class ProfilePage extends React.Component {
 									</GridContainer>
 								</GridItem>
 								<GridItem xs={12} sm={12} md={2} className={classes.gridItem}>
-									<h4 className={classes.title}>Stats</h4>
+									<h4 className={classes.title}>About me</h4>
 									<ul className={classes.listUnstyled}>
 										<li>
 											<b>28</b> ans
 										</li>
 										<li>
-											<b>4</b> Languages
+											<b>2</b> Languages
 										</li>
 										<li>
-											<b>Licence Driving</b>
+											<b>Driving licence</b>
 										</li>
 										<li>
 											<b>Self-Learning</b>
@@ -182,31 +184,29 @@ class ProfilePage extends React.Component {
 									<hr />
 									<h4 className={classes.title}>About this work</h4>
 									<p className={classes.description}>
-										This website shows a piece of what I am able to do in programmation. Create a
-										CV-website is according to me, the best way to introduce my future projects.
+										This website shows of what I am capable of doing in programming. Created a
+										CV-website is the best way to introduce my future projects.
 									</p>
 									<hr />
 									<h4 className={classes.title}>Miscellaneous</h4>
 									<Badge color="info">Sport</Badge>
 									<ul className={classes.listUnstyled}>
-										<li>Basket-ball, MMA</li>
+										<li>Basket-ball</li>
 									</ul>
 									<Badge color="warning">Trips</Badge>
 									<ul className={classes.listUnstyled}>
 										<li>Berlin, London, Madrid, Munich, Poland</li>
 									</ul>
-									<Badge color="primary">Foods</Badge>
-									<Badge color="primary">Self-learning</Badge>
 								</GridItem>
 							</GridContainer>
 							<br />
 							<br />
-							<div>
+							<div id="Skills">
 								<h3 className={classes.title}>My specialisations</h3>
 								<SectionSkills />
 							</div>
 							<div>
-								<SectionBlogs />
+								<Timeline id="Timeline" />
 							</div>
 						</div>
 
@@ -214,7 +214,7 @@ class ProfilePage extends React.Component {
 					</div>
 				</div>
 				<div>
-					<SectionContacts />
+					<SectionContacts id="Contacts" />
 				</div>
 				<Footer
 					content={

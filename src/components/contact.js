@@ -1,6 +1,9 @@
 import React from 'react'
+import axios from 'axios'
 // react components used to create a google map
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps'
+
+import { MySnackbarContentWrapper } from './alert'
+import Snackbar from '@material-ui/core/Snackbar'
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles'
 import Checkbox from '@material-ui/core/Checkbox'
@@ -18,87 +21,47 @@ import Card from 'components/Card/Card.jsx'
 import CardHeader from 'components/Card/CardHeader.jsx'
 import CardBody from 'components/Card/CardBody.jsx'
 import CardFooter from 'components/Card/CardFooter.jsx'
-import CustomInput from 'components/CustomInput/CustomInput.jsx'
+import SnackbarContent from 'components/Snackbar/SnackbarContent.jsx'
 import Button from 'components/CustomButtons/Button.jsx'
-
+import PropTypes from 'prop-types'
 import contactsStyle from 'assets/jss/material-kit-pro-react/views/sectionsSections/contactsStyle.jsx'
-
 import city from 'assets/img/examples/city.jpg'
-
-const RegularMap = withScriptjs(
-	withGoogleMap((props) => (
-		<GoogleMap
-			defaultZoom={14}
-			defaultCenter={{ lat: 44.43353, lng: 26.093928 - 0.025 }}
-			defaultOptions={{
-				scrollwheel: false,
-				zoomControl: true,
-				styles: [
-					{
-						featureType: 'water',
-						stylers: [ { saturation: 43 }, { lightness: -11 }, { hue: '#0088ff' } ]
-					},
-					{
-						featureType: 'road',
-						elementType: 'geometry.fill',
-						stylers: [ { hue: '#ff0000' }, { saturation: -100 }, { lightness: 99 } ]
-					},
-					{
-						featureType: 'road',
-						elementType: 'geometry.stroke',
-						stylers: [ { color: '#808080' }, { lightness: 54 } ]
-					},
-					{
-						featureType: 'landscape.man_made',
-						elementType: 'geometry.fill',
-						stylers: [ { color: '#ece2d9' } ]
-					},
-					{
-						featureType: 'poi.park',
-						elementType: 'geometry.fill',
-						stylers: [ { color: '#ccdca1' } ]
-					},
-					{
-						featureType: 'road',
-						elementType: 'labels.text.fill',
-						stylers: [ { color: '#767676' } ]
-					},
-					{
-						featureType: 'road',
-						elementType: 'labels.text.stroke',
-						stylers: [ { color: '#ffffff' } ]
-					},
-					{ featureType: 'poi', stylers: [ { visibility: 'off' } ] },
-					{
-						featureType: 'landscape.natural',
-						elementType: 'geometry.fill',
-						stylers: [ { visibility: 'on' }, { color: '#b8cb93' } ]
-					},
-					{ featureType: 'poi.park', stylers: [ { visibility: 'on' } ] },
-					{
-						featureType: 'poi.sports_complex',
-						stylers: [ { visibility: 'on' } ]
-					},
-					{ featureType: 'poi.medical', stylers: [ { visibility: 'on' } ] },
-					{
-						featureType: 'poi.business',
-						stylers: [ { visibility: 'simplified' } ]
-					}
-				]
-			}}
-		>
-			<Marker position={{ lat: 44.43353, lng: 26.093928 }} />
-		</GoogleMap>
-	))
-)
+import { TextValidator, ValidatorForm } from 'react-material-ui-form-validator'
 
 class SectionContacts extends React.Component {
 	constructor(props) {
 		super(props)
+
 		this.state = {
-			checked: []
+			checked: [],
+			first_name: '',
+			last_name: '',
+			email: '',
+			message: '',
+			phone: '',
+			name: '',
+
+			displaySnack: false,
+			snack: { variant: 'warning', message: '' }
 		}
+		this.handleChange = this.handleChange.bind(this)
+		this.handleSubmit = this.handleSubmit.bind(this)
 	}
+
+	handleClose = (reason) => {
+		if (reason === 'clickaway') {
+			return
+		}
+
+		this.setState({ displaySnack: false })
+	}
+
+	handleChange = (event) => {
+		this.setState({
+			[event.target.name]: event.target.value
+		})
+	}
+
 	handleToggle(value) {
 		const { checked } = this.state
 		const currentIndex = checked.indexOf(value)
@@ -114,8 +77,52 @@ class SectionContacts extends React.Component {
 			checked: newChecked
 		})
 	}
+
+	async handleSubmit(event) {
+		event.preventDefault()
+		console.log(this.state)
+
+		const { first_name, last_name, email, message, phone } = this.state
+		const snack = {
+			variant: 'success',
+			message: 'Your message has been sent ! I will contact you soon.'
+		}
+
+		const clear = document.location.reload(true)
+		const showAlert = this.setState({ snack, displaySnack: true })
+		try {
+			const form = await axios.post('http://localhost:3030/api/form', {
+				first_name,
+				last_name,
+				email,
+				message,
+				phone,
+				snack,
+				showAlert,
+				clear
+			})
+			this.result = form.json()
+		} catch (err) {
+			alert('Something wrong with the form..')
+		}
+	}
+
+	// handleSubmit = (event) => {
+	// 	event.preventDefault()
+	// 	const { first_name, last_name, email, message, phone } = this.state
+	// 	const snack = {
+	// 		variant: 'success',
+	// 		message: 'Your message has been sent ! I will contact you soon.'
+	// 	}
+	// 	console.log('this.state: ', first_name)
+	// 	axios
+	// 		.post('http://localhost:3030/api/form', this.state, snack, this.setState({ snack, displaySnack: true }))
+	// 		.then((response) => {})
+	// }
 	render() {
 		const { classes, ...rest } = this.props
+		const { first_name, last_name, email, message, phone } = this.state
+
 		return (
 			<div className="cd-section" {...rest}>
 				{/* Contact us 1 START */}
@@ -164,52 +171,121 @@ class SectionContacts extends React.Component {
 									icon={Email}
 								/>
 							</GridItem>
+
 							<GridItem xs={12} sm={5} md={5} className={classes.mlAuto}>
 								<Card className={classes.card1}>
-									<form>
-										<CardHeader contact color="primary" className={classes.textCenter}>
-											<h4 className={classes.cardTitle}>Contact me</h4>
-										</CardHeader>
+									<CardHeader contact color="warning" className={classes.textCenter}>
+										<h4 className={classes.cardTitle}>Contact me</h4>
+									</CardHeader>
+									<ValidatorForm
+										id="myForm"
+										name="contact-form"
+										ref="form"
+										onSubmit={this.handleSubmit}
+										onError={(errors) => console.log(errors)}
+									>
 										<CardBody>
 											<GridContainer>
 												<GridItem xs={12} sm={6} md={6}>
-													<CustomInput
-														labelText="First Name"
-														id="first"
-														formControlProps={{
-															fullWidth: true
-														}}
+													<TextValidator
+														id="multiline-static"
+														label="First Name"
+														name="first_name"
+														className={classes.textField}
+														style={{ width: 170, marginTop: 7 }}
+														value={first_name}
+														onChange={this.handleChange}
+														margin="normal"
+														required
+														data-value-missing="Please enter your first name!"
+														validators={[ 'required' ]}
+														errorMessages={[ 'this field is required' ]}
 													/>
+
+													<GridItem xs={12} sm={6} md={6} />
 												</GridItem>
+												<br />
 												<GridItem xs={12} sm={6} md={6}>
-													<CustomInput
-														labelText="Last Name"
-														id="last"
-														formControlProps={{
-															fullWidth: true
-														}}
+													<TextValidator
+														id="multiline-static"
+														label="Last Name"
+														name="last_name"
+														className={classes.textField}
+														style={{ width: 170, marginTop: 7 }}
+														value={last_name}
+														onChange={this.handleChange}
+														margin="normal"
+														required
+														data-value-missing="Please enter your last name!"
+														validators={[ 'required' ]}
+														errorMessages={[ 'this field is required' ]}
 													/>
 												</GridItem>
 											</GridContainer>
-											<CustomInput
-												labelText="Email Address"
-												id="email-address"
-												formControlProps={{
-													fullWidth: true
-												}}
+											<br />
+
+											<GridContainer>
+												<GridItem xs={12} sm={6} md={6}>
+													<TextValidator
+														id="multiline-static"
+														label="Your Email"
+														name="email"
+														className={classes.textField}
+														style={{ width: 170, marginTop: 7 }}
+														value={email}
+														onChange={this.handleChange}
+														required
+														data-value-missing="Please enter your email(‘Required’)"
+														margin="normal"
+														validators={[ 'required', 'isEmail' ]}
+														errorMessages={[ 'Please enter a valid email' ]}
+													/>
+
+													<GridItem xs={12} sm={6} md={6} />
+												</GridItem>
+												<br />
+												<GridItem xs={12} sm={6} md={6}>
+													<TextValidator
+														id="multiline-static"
+														label="Your phone number"
+														name="phone"
+														className={classes.textField}
+														style={{ width: 170, marginTop: 7 }}
+														value={phone}
+														required
+														data-value-missing="Please enter your phone number!"
+														onChange={this.handleChange}
+														margin="normal"
+														validators={[ 'minNumber:10', 'required' ]}
+														errorMessages={[ 'Only numbers are accepted' ]}
+													/>
+												</GridItem>
+											</GridContainer>
+											<TextValidator
+												id="multiline-static"
+												label="Your message"
+												name="message"
+												value={message}
+												multiline
+												rows="6"
+												style={{ width: 385 }}
+												required
+												data-value-missing="Please enter your message!"
+												className={classes.textField}
+												onChange={this.handleChange}
+												margin="normal"
+												validators={[ 'required', 'isMessage' ]}
+												errorMessages={[ 'this field is required' ]}
 											/>
-											<CustomInput
-												labelText="Your Message"
-												id="message"
-												formControlProps={{
-													fullWidth: true
-												}}
-												inputProps={{
-													multiline: true,
-													rows: 5
-												}}
-											/>
+											<Button
+												color="warning"
+												className={classes.pullRight}
+												onClick={this.handleSubmit}
+											>
+												Send Message
+											</Button>
 										</CardBody>
+
 										<CardFooter className={classes.justifyContentBetween}>
 											<FormControlLabel
 												control={
@@ -223,12 +299,24 @@ class SectionContacts extends React.Component {
 												}
 												classes={{ label: classes.label }}
 												label="I'm not a robot"
-											/>
-											<Button color="primary" className={classes.pullRight}>
-												Send Message
-											</Button>
+											/>{' '}
 										</CardFooter>
-									</form>
+										<div>
+											<Snackbar
+												anchorOrigin={{
+													vertical: 'bottom',
+													horizontal: 'right'
+												}}
+												open={this.state.displaySnack}
+												autoHideDuration={3}
+											>
+												<MySnackbarContentWrapper
+													{...this.state.snack}
+													onClose={this.handleClose}
+												/>
+											</Snackbar>
+										</div>
+									</ValidatorForm>
 								</Card>
 							</GridItem>
 						</GridContainer>
@@ -238,5 +326,10 @@ class SectionContacts extends React.Component {
 		)
 	}
 }
-
+SnackbarContent.propTypes = {
+	message: PropTypes.node.isRequired,
+	color: PropTypes.oneOf([ 'info', 'success', 'warning', 'danger', 'primary' ]),
+	close: PropTypes.bool,
+	icon: PropTypes.func
+}
 export default withStyles(contactsStyle)(SectionContacts)

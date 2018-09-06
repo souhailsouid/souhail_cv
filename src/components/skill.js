@@ -81,6 +81,7 @@ const SectionSkills = (props) => {
 							title="JAVASCRIPT "
 							placement="top"
 							classes={{ tooltip: classes.tooltip }}
+							style={{ maxWidth: 900 }}
 						>
 							<GridItem xs={12} sm={2} md={2} className={classes.border}>
 								<Button color="white" justIcon simple href="#pablo" onClick={(e) => e.preventDefault()}>
