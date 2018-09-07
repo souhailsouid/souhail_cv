@@ -15,7 +15,7 @@ import Header from 'components/Header/Header.jsx'
 import Footer from 'components/Footer/Footer.jsx'
 import GridContainer from 'components/Grid/GridContainer.jsx'
 import GridItem from 'components/Grid/GridItem.jsx'
-import HeaderLinks from 'components/Header/HeaderLinks.jsx'
+import HeaderLinks_fr from 'components/Header/HeaderLinks_fr.jsx'
 import Card from 'components/Card/Card.jsx'
 import CardBody from 'components/Card/CardBody.jsx'
 import Badge from 'components/Badge/Badge.jsx'
@@ -27,11 +27,11 @@ import souhail from 'assets/img/faces/souhail.jpg'
 import dg6 from 'assets/img/dg6.jpg'
 import bg7 from 'assets/img/bg7.jpg'
 import bg12 from 'assets/img/bg12.jpg'
-import Timeline from '../.././components/timeline'
+import Timeline from '../.././components/timeline_fr'
 import profilePageStyle from 'assets/jss/material-kit-pro-react/views/profilePageStyle.jsx'
-import SectionContacts from '../.././components/contact'
+import SectionContacts from '../.././components/contact_fr'
 
-class ProfilePage_fr extends React.Component {
+class ProfilePage extends React.Component {
 	componentDidMount() {
 		window.scrollTo(0, 0)
 		document.body.scrollTop = 0
@@ -45,7 +45,7 @@ class ProfilePage_fr extends React.Component {
 				<Header
 					color="transparent"
 					brand="Souhail Souid"
-					links={<HeaderLinks dropdownHoverColor="info" />}
+					links={<HeaderLinks_fr dropdownHoverColor="info" />}
 					fixed
 					changeColorOnScroll={{
 						height: 200,
@@ -64,7 +64,7 @@ class ProfilePage_fr extends React.Component {
 									</div>
 									<div className={classes.name}>
 										<h3 className={classes.title}>Souhail Souid</h3>
-										<h6>DEVELOPPER FRONT-END</h6>
+										<h6>DEVELOPPEUR FRONT-END</h6>
 										<Link to="https://github.com/souhailsouid">
 											<Tooltip
 												id="tooltip-top"
@@ -95,16 +95,18 @@ class ProfilePage_fr extends React.Component {
 						</GridContainer>
 						<div className={classNames(classes.description, classes.textCenter)}>
 							<h5 className={classes.description}>
-								Perseverant, curious and hard-worker. This is my DNA. By the way, I am a developper
-								specialising in React and Material UI. Using the code to find solutions or create
-								something from scratch by working day and night, helps me to refocus on myself. In fact,
-								I am truly passionnate in achieving relevant targets . {' '}
+								Perseverant, rigoureux et discipliné, trois qualités que je pourrai vous citer. Je suis
+								un developpeur spécialisé en REACT et Material UI. Coder à partir d'une idée, me procure
+								une excitation à réaliser, cherchez de solutions dans le cadre d'un projet; à l'image
+								des ingénieurs d'Airbus dans la réalisation d'un de leurs avions débutant le processus à
+								partir d'une feuille blanche. Je suis en effet, passionné à réver grand dans la
+								réalisation d'un objectif. {' '}
 							</h5>
 						</div>
 						<div className={classes.profileTabs} id="About">
 							<GridContainer>
 								<GridItem xs={12} sm={12} md={7} className={classes.gridItem}>
-									<h4 className={classes.title}>Projects</h4>
+									<h4 className={classes.title}>Projets</h4>
 									<GridContainer className={classes.collections}>
 										<GridItem xs={12} sm={12} md={6}>
 											<Card
@@ -116,10 +118,10 @@ class ProfilePage_fr extends React.Component {
 												<a href="#pablo" />
 												<CardBody background className={classes.cardBody}>
 													<Badge color="warning" className={classes.badge}>
-														Earlier September 2018
+														Début-septembre 2018
 													</Badge>
 													<a href="#pablo">
-														<h2 className={classes.cardTitleWhite}>Coming soon</h2>
+														<h2 className={classes.cardTitleWhite}>En cours</h2>
 													</a>
 												</CardBody>
 											</Card>
@@ -134,10 +136,10 @@ class ProfilePage_fr extends React.Component {
 												<a href="#pablo" />
 												<CardBody background className={classes.cardBody}>
 													<Badge color="info" className={classes.badge}>
-														September 2018
+														Septembre 2018
 													</Badge>
 													<a href="#pablo">
-														<h2 className={classes.cardTitleWhite}>In progress</h2>
+														<h2 className={classes.cardTitleWhite}>En cours</h2>
 													</a>
 												</CardBody>
 											</Card>
@@ -152,10 +154,10 @@ class ProfilePage_fr extends React.Component {
 												<a href="#pablo" />
 												<CardBody background className={classes.cardBody}>
 													<Badge color="danger" className={classes.badge}>
-														October 2018
+														Octobre 2018
 													</Badge>
 													<a href="#pablo">
-														<h2 className={classes.cardTitleWhite}>In Progress</h2>
+														<h2 className={classes.cardTitleWhite}>En cours</h2>
 													</a>
 												</CardBody>
 											</Card>
@@ -169,31 +171,31 @@ class ProfilePage_fr extends React.Component {
 											<b>28</b> ans
 										</li>
 										<li>
-											<b>2</b> Languages
+											<b>2</b> Langues
 										</li>
 										<li>
-											<b>Driving licence</b>
+											<b>Permis B</b>
 										</li>
 										<li>
-											<b>Self-Learning</b>
+											<b>Autodidacte</b>
 										</li>
 										<li>
-											Living in<b> Paris </b>
+											Vit à<b> Paris </b>
 										</li>
 									</ul>
 									<hr />
 									<h4 className={classes.title}>About this work</h4>
 									<p className={classes.description}>
-										This website shows of what I am capable of doing in programming. Created a
-										CV-website is the best way to introduce my future projects.
+										Ce site-web a pour ambition de présenter ce que je suis capable de faire en
+										coding. Créer ce CV web s'inscrit dans la présentation de mes projets à venir.
 									</p>
 									<hr />
-									<h4 className={classes.title}>Miscellaneous</h4>
+									<h4 className={classes.title}>Centre d'intérêts</h4>
 									<Badge color="info">Sport</Badge>
 									<ul className={classes.listUnstyled}>
 										<li>Basket-ball</li>
 									</ul>
-									<Badge color="warning">Trips</Badge>
+									<Badge color="warning"> Voyages</Badge>
 									<ul className={classes.listUnstyled}>
 										<li>Berlin, London, Madrid, Munich, Poland</li>
 									</ul>
@@ -202,7 +204,7 @@ class ProfilePage_fr extends React.Component {
 							<br />
 							<br />
 							<div id="Skills">
-								<h3 className={classes.title}>My specialisations</h3>
+								<h3 className={classes.title}>Mes compétences informatiques</h3>
 								<SectionSkills />
 							</div>
 							<div>
@@ -248,4 +250,4 @@ class ProfilePage_fr extends React.Component {
 	}
 }
 
-export default withStyles(profilePageStyle)(ProfilePage_fr)
+export default withStyles(profilePageStyle)(ProfilePage)
