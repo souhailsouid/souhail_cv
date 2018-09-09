@@ -65,7 +65,7 @@ class ProfilePage extends React.Component {
 									<div className={classes.name}>
 										<h3 className={classes.title}>Souhail Souid</h3>
 										<h6>DEVELOPPEUR FRONT-END</h6>
-										<Link to="https://github.com/souhailsouid">
+										<a href="https://github.com/souhailsouid">
 											<Tooltip
 												id="tooltip-top"
 												title="Watch my Github !"
@@ -76,8 +76,8 @@ class ProfilePage extends React.Component {
 													<i className={classes.socials + ' fab fa-github'} />
 												</Button>
 											</Tooltip>
-										</Link>
-										<Link to="https://www.linkedin.com/in/souhail-souid-81181915b/">
+										</a>
+										<a href="https://www.linkedin.com/in/souhail-souid-81181915b/">
 											<Tooltip
 												id="tooltip-top"
 												title="...and my Linkedin ?"
@@ -88,19 +88,18 @@ class ProfilePage extends React.Component {
 													<i className={classes.socials + ' fab fa-linkedin'} />
 												</Button>
 											</Tooltip>
-										</Link>
+										</a>
 									</div>
 								</div>
 							</GridItem>
 						</GridContainer>
 						<div className={classNames(classes.description, classes.textCenter)}>
 							<h5 className={classes.description}>
-								Perseverant, rigoureux et discipliné, trois qualités que je pourrai vous citer. Je suis
-								un developpeur spécialisé en REACT et Material UI. Coder à partir d'une idée, me procure
-								une excitation à réaliser, cherchez de solutions dans le cadre d'un projet; à l'image
-								des ingénieurs d'Airbus dans la réalisation d'un de leurs avions débutant le processus à
-								partir d'une feuille blanche. Je suis en effet, passionné à réver grand dans la
-								réalisation d'un objectif. {' '}
+								Persévérant, rigoureux et discipliné, trois qualités que je pourrai vous citer. Je suis
+								un developpeur spécialisé en REACT. Coder me procure une energie à concrétiser, cherchez
+								de solutions dans le cadre d'un projet; à l'image des ingénieurs d'Airbus dans la
+								réalisation d'un avion débutant le processus à partir d'une feuille blanche. Je suis en
+								effet, passionné à rever grand dans la réalisation d'un projet. {' '}
 							</h5>
 						</div>
 						<div className={classes.profileTabs} id="About">
@@ -165,7 +164,7 @@ class ProfilePage extends React.Component {
 									</GridContainer>
 								</GridItem>
 								<GridItem xs={12} sm={12} md={2} className={classes.gridItem}>
-									<h4 className={classes.title}>About me</h4>
+									<h4 className={classes.title}>À propos</h4>
 									<ul className={classes.listUnstyled}>
 										<li>
 											<b>28</b> ans
@@ -180,7 +179,7 @@ class ProfilePage extends React.Component {
 											<b>Autodidacte</b>
 										</li>
 										<li>
-											Vit à<b> Paris </b>
+											Localisation:<b> Paris </b>
 										</li>
 									</ul>
 									<hr />

@@ -4,7 +4,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 // react components for routing our app without refresh
 import { Link } from 'react-router-dom'
-
+import Tooltip from '@material-ui/core/Tooltip'
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles'
 import List from '@material-ui/core/List'
@@ -17,6 +17,7 @@ import Build from '@material-ui/icons/Build'
 import ListIcon from '@material-ui/icons/List'
 import Assignment from '@material-ui/icons/Assignment'
 import Call from '@material-ui/icons/Call'
+// import GB from 'assets/img/flags/GB.png'
 
 // core components
 import CustomDropdown from 'components/CustomDropdown/CustomDropdown.jsx'
@@ -32,7 +33,7 @@ function HeaderLinks_fr({ ...props }) {
 	}
 
 	const smoothScroll = (e, target) => {
-		if (window.location.pathname === '/home_fr') {
+		if (window.location.pathname === '/cv_fr') {
 			var isMobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)
 			if (isMobile) {
 				// if we are on mobile device the scroll into view will be managed by the browser
@@ -64,7 +65,7 @@ function HeaderLinks_fr({ ...props }) {
 	const { classes, dropdownHoverColor } = props
 	return (
 		<List className={classes.list + ' ' + classes.mlAuto}>
-			<Link to="/home_fr" className={classes.dropdownLink}>
+			<Link to="/" className={classes.dropdownLink}>
 				<Home /> Home
 			</Link>
 
@@ -121,6 +122,27 @@ function HeaderLinks_fr({ ...props }) {
 					]}
 				/>
 			</ListItem>
+
+			<Tooltip
+				id="tooltip-top"
+				title="Voir mon cv en français!"
+				placement="top"
+				classes={{ tooltip: classes.tooltip }}
+			>
+				<Link to="/cv_fr" className={classes.dropdownLink}>
+					<img src={'https://image.noelshack.com/fichiers/2018/36/7/1536486782-fr.png'} alt="..." />
+				</Link>
+			</Tooltip>
+			<Tooltip
+				id="tooltip-top"
+				title="View my cv in english!"
+				placement="top"
+				classes={{ tooltip: classes.tooltip }}
+			>
+				<Link to="/cv_en" className={classes.dropdownLink}>
+					<img src={'https://image.noelshack.com/fichiers/2018/36/7/1536486606-gb.png'} alt="..." />
+				</Link>
+			</Tooltip>
 		</List>
 	)
 }

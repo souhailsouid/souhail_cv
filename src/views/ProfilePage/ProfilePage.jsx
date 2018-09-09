@@ -65,7 +65,7 @@ class ProfilePage_fr extends React.Component {
 									<div className={classes.name}>
 										<h3 className={classes.title}>Souhail Souid</h3>
 										<h6>DEVELOPPER FRONT-END</h6>
-										<Link to="https://github.com/souhailsouid">
+										<a href="https://github.com/souhailsouid">
 											<Tooltip
 												id="tooltip-top"
 												title="Watch my Github !"
@@ -76,8 +76,8 @@ class ProfilePage_fr extends React.Component {
 													<i className={classes.socials + ' fab fa-github'} />
 												</Button>
 											</Tooltip>
-										</Link>
-										<Link to="https://www.linkedin.com/in/souhail-souid-81181915b/">
+										</a>
+										<a href="https://www.linkedin.com/in/souhail-souid-81181915b/">
 											<Tooltip
 												id="tooltip-top"
 												title="...and my Linkedin ?"
@@ -88,14 +88,14 @@ class ProfilePage_fr extends React.Component {
 													<i className={classes.socials + ' fab fa-linkedin'} />
 												</Button>
 											</Tooltip>
-										</Link>
+										</a>
 									</div>
 								</div>
 							</GridItem>
 						</GridContainer>
 						<div className={classNames(classes.description, classes.textCenter)}>
 							<h5 className={classes.description}>
-								Perseverant, curious and hard-worker. This is my DNA. By the way, I am a developper
+								Perseverant, curious and hard-worker, this is my DNA. By the way, I am a developper
 								specialising in React and Material UI. Using the code to find solutions or create
 								something from scratch by working day and night, helps me to refocus on myself. In fact,
 								I am truly passionnate in achieving relevant targets . {' '}

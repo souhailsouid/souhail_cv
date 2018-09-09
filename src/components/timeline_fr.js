@@ -61,9 +61,9 @@ function Timeline({ ...props }) {
 										</h3>
 										<p className={classes.description1}>
 											M&S est une chaîne de magasins britannique spécialisé dans la vente de
-											nourriture, vêtements, et équipement intérieur. J'ai eu l'expérience de
+											nourriture, vêtements, et équipement intérieur. J'ai eu l'occasion de
 											travailler dans le département de vêtements pour femmes. J'ai développé en
-											outre plusieurs aptitudes notamment relationnelles et commerciales.
+											outre plusieurs aptitudes notamment relationnelle et commerciale.
 											<Link to="/https://corporate.marksandspencer.com/">
 												<p>Visitez M&S</p>
 											</Link>
@@ -148,18 +148,17 @@ function Timeline({ ...props }) {
 										<p className={classes.description1}>
 											Dans le but de progresser en anglais et à la recherche d'un challenge
 											attirant, j'ai séjourné neuf mois à Londres d'octobre 2012 à juillet 2013.
-											Ce fut une expérience constructive. J'ai pu améliorer considérablement mon
-											anglais, et avoir une expérience de collaboration dans un environnement
-											multiculturel. Mon lieu de travail s'intitulé Poundland, une chaine de
-											magasin britannique, qui vend la plupart de ses produits au prix d'un livre
-											sterling.
+											Ce fut une bel expérience . J'ai pu améliorer mon anglais, et avoir une
+											expérience de travail dans un environnement multiculturel. J'ai travaillé à
+											Poundland, une chaine de magasin britannique, qui vend la plupart de ses
+											produits au prix d'un livre sterling.
 											<Link to="/http://www.poundland.co.uk//">
-												<p>Visitez leurs site</p>
+												<p>Visitez leur site</p>
 											</Link>
 										</p>
 										<p className={classes.author}>
 											<p>
-												<b>Février 2013 - Juillet 2013</b>, 5 months
+												<b>Février 2013 - Juillet 2013</b>, 5 mois
 											</p>
 										</p>
 									</GridItem>
@@ -220,7 +219,7 @@ function Timeline({ ...props }) {
 											<a href="#pablo" onClick={(e) => e.preventDefault()}>
 												<b>Février 2018 - Juillet 2018</b>
 											</a>{' '}
-											, 5 months
+											, 5 mois
 										</p>
 									</GridItem>
 								</GridContainer>
@@ -244,7 +243,7 @@ function Timeline({ ...props }) {
 
 									<GridItem xs={12} sm={7} md={7}>
 										<Info>
-											<h6 className={classes.cardCategory}>E-Learning </h6>
+											<h6 className={classes.cardCategory}>À DISTANCE </h6>
 										</Info>
 										<h3 className={classes.cardTitle}>
 											<a href="#pablo" onClick={(e) => e.preventDefault()}>
@@ -255,8 +254,7 @@ function Timeline({ ...props }) {
 											J'ai étudié le cursus de BTS Commerce international à distance via le CNED.
 											Ce choix résulte de mon investissement personnel dans ma discipline
 											sportive, le basket-ball. J'ai beaucoup appris durant cette formation à
-											distance du point de vue personnel. Je travaille dorénavant avec date
-											d'échéance, objectif et discipline. Je suis maintenant diplomé. Pour plus
+											distance du point de vue personnel. Je suis maintenant diplomé. Pour plus
 											d'information sur la formation suivie, cliquez sur le lien ci-dessous.
 											<Link to="/http://www.cned.fr/inscription/22962DIX/">
 												<p>Visitez le CNED</p>
