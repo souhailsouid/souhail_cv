@@ -39,7 +39,6 @@ class Home extends Component {
 						</div>
 					</div>
 				</div>
-				{/* <Footers className="footer footer-transparent" /> */}
 
 				<footer className="footer footer-transparent" />
 				<nav className="pull-left">
