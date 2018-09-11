@@ -7,6 +7,7 @@ import Tooltip from '@material-ui/core/Tooltip'
 import cover from './assets/img/cover.jpeg'
 class Home extends Component {
 	render() {
+		const { classes } = this.props
 		return (
 			<div>
 				<div
@@ -23,7 +24,7 @@ class Home extends Component {
 				>
 					<div className="container">
 						<div className="row">
-							<div className="col-md-8 col-md-offset-2 text-center">
+							<div className="col-sm-7 col-sm-offset-3 text-center">
 								<h1 className="title">Souhail SOUID</h1>
 								<h4 className="title">
 									{' '}
@@ -31,7 +32,7 @@ class Home extends Component {
 								</h4>
 								<h5 className="title">Reacts - Material UI</h5>
 								<Link to="/cv_en">
-									<Button color="warning" round disabled className="description">
+									<Button color="warning" round disabled className={this.props.margin5}>
 										<b>View my CV</b>
 									</Button>
 								</Link>
@@ -60,7 +61,7 @@ class Home extends Component {
 					</Tooltip>
 					<Tooltip id="tooltip-top" title=" ... and my Github !" placement="top">
 						<a href="https://www.github.com/souhailsouid">
-							<Button color="github" style={{ marginRight: 95, marginTop: 0 }} simple>
+							<Button color="github" style={{ marginRight: 55, marginTop: 0 }} simple>
 								<i className={' fab fa-github'} />
 							</Button>
 						</a>
