@@ -145,10 +145,10 @@ function Timeline({ ...props }) {
 											</a>
 										</h3>
 										<p className={classes.description1}>
-											In the way to progress in english and are looking for a relevant challenge,
-											I went to United Kingdom in October 2012 for 10 months. It was a great
+											In the way to progress in english and am looking for a relevant challenge, I
+											went to United Kingdom in October 2012 for 10 months. It was a great
 											experience. I improved my english, and now, I have the experience to work in
-											multicultural environment. My working space was <b>Poundland</b> , a British
+											multicultural environment. My working place was <b>Poundland</b> , a British
 											variety store chain, selling most items at the single price of £1.
 											<Link to="/http://www.poundland.co.uk//">
 												<p>Visit their website</p>
