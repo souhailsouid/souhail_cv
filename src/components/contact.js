@@ -103,7 +103,7 @@ class SectionContacts extends React.Component {
 			})
 			this.result = form.json()
 		} catch (err) {
-			alert('Something wrong with the form..')
+			alert('Something wrong with the server, please try later..')
 		}
 	}
 

@@ -7,7 +7,6 @@ import Tooltip from '@material-ui/core/Tooltip'
 import cover from './assets/img/cover.jpeg'
 class Home extends Component {
 	render() {
-		const { classes } = this.props
 		return (
 			<div>
 				<div
