@@ -62,7 +62,7 @@ function Timeline({ ...props }) {
 										<p className={classes.description1}>
 											M&S is a retailer operating Food, Clothing & Home and other retail
 											businesses. I have had the experience to work in the women's department
-											which I develop several skills in relationship, sales and patience.
+											which I developed several skills in relationship, sales and patience.
 											<Link to="/https://corporate.marksandspencer.com/">
 												<p>Visit their website</p>
 											</Link>
@@ -87,7 +87,7 @@ function Timeline({ ...props }) {
 										</h3>
 										<p className={classes.description1}>
 											I used to be a trainee in buyer's department. This internship operated in my
-											study in an International Trade. It was a wonderful experience - both from a
+											study in International Trade. It was a wonderful experience - both from a
 											human and a professional point of view.
 											<Link to="/https://www.airbus.com/">
 												<p>Visit their website</p>

@@ -27,11 +27,11 @@ class Home extends Component {
 								<h1 className="title">Souhail SOUID</h1>
 								<h4 className="title">
 									{' '}
-									<b>Developper back & front-end</b>
+									<b>Developer back & front-end</b>
 								</h4>
 								<h5 className="title">Reacts - Material UI</h5>
 								<Link to="/cv_en">
-									<Button color="warning" round disabled className={this.props.margin5}>
+									<Button color="warning" round className={this.props.margin5}>
 										<b>View my CV</b>
 									</Button>
 								</Link>

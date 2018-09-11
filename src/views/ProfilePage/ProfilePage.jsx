@@ -64,7 +64,7 @@ class ProfilePage_fr extends React.Component {
 									</div>
 									<div className={classes.name}>
 										<h3 className={classes.title}>Souhail Souid</h3>
-										<h6>DEVELOPPER FRONT-END</h6>
+										<h6>DEVELOPER FRONT-END</h6>
 										<a href="https://github.com/souhailsouid">
 											<Tooltip
 												id="tooltip-top"
@@ -95,7 +95,7 @@ class ProfilePage_fr extends React.Component {
 						</GridContainer>
 						<div className={classNames(classes.description, classes.textCenter)}>
 							<h5 className={classes.description}>
-								Perseverant, curious and hard-worker, this is my DNA. By the way, I am a developper
+								Perseverant, curious and hard-worker, this is my DNA. By the way, I am a developer
 								specialising in React and Material UI. Using the code to find solutions or create
 								something from scratch by working day and night, helps me to refocus on myself. In fact,
 								I am truly passionnate in achieving relevant targets . {' '}
