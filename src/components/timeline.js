@@ -148,7 +148,7 @@ function Timeline({ ...props }) {
 											In the way to progress in english and am looking for a relevant challenge, I
 											went to United Kingdom in October 2012 for 10 months. It was a great
 											experience. I improved my english, and now, I have the experience to work in
-											multicultural environment. My working place was <b>Poundland</b> , a British
+											multicultural environment. My working space was <b>Poundland</b> , a British
 											variety store chain, selling most items at the single price of £1.
 											<Link to="/http://www.poundland.co.uk//">
 												<p>Visit their website</p>
@@ -200,16 +200,16 @@ function Timeline({ ...props }) {
 										</Info>
 										<h3 className={classes.cardTitle}>
 											<a href="#pablo" onClick={(e) => e.preventDefault()}>
-												Developper web - React (Javascript)
+												Developer web - React (Javascript)
 											</a>
 										</h3>
 										<p className={classes.description1}>
 											<b>Wild Code School</b> is a school specialized in fast learning coding for
 											five intensives months. I have had the opportunity to work with a customer
 											in realisating project. I have, in fact, already participated in the
-											development of university's website with a group of seven developpers,
+											development of university's website with a group of seven developers,
 											including me. The skills studied are mentioned above. I am currently
-											preparing myself for a certified level 3 WEB DEVELOPPER diploma in the RNCP
+											preparing myself for a certified level 3 WEB DEVELOPER diploma in the RNCP
 											(National Repertory of Professional Certification).
 											<Link to="/https://wildcodeschool.fr/nos-campus/">
 												<p>Visit the Wild Code School </p>
