@@ -103,8 +103,16 @@ class SectionContacts extends React.Component {
 			})
 			this.result = form.json()
 		} catch (err) {
-			alert('Something wrong with the server, please try later..')
+			if (err.message) {
+				const snack = {
+					variant: 'error',
+					message: 'Please check the form!'
+				}
+
+				return this.setState({ snack, displaySnack: true })
+			}
 		}
+		// alert('Something wrong with the server, please try later..')
 	}
 
 	// handleSubmit = (event) => {
