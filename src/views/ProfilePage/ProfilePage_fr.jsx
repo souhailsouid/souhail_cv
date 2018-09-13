@@ -97,8 +97,7 @@ class ProfilePage extends React.Component {
 							<h5 className={classes.description}>
 								Persévérant, rigoureux et discipliné, trois qualités que je pourrai vous citer. Je suis
 								un developpeur spécialisé en REACT. Coder me procure une energie à concrétiser, cherchez
-								de solutions dans le cadre d'un projet; à l'image des ingénieurs d'Airbus dans la
-								réalisation d'un avion débutant le processus à partir d'une feuille blanche. Je suis en
+								de solutions dans le cadre d'un projet. Je suis en
 								effet, passionné à rever grand dans la réalisation d'un projet. {' '}
 							</h5>
 						</div>
