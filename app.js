@@ -28,8 +28,8 @@ app.post('/api/form', (req, res) => {
 			port: 443,
 			secure: false, // true for 465, false for other ports
 			auth: {
-				user: process.env.emailTest, // generated ethereal user
-				pass: process.env.emailPassword // generated ethereal password
+				user: 'mr.souid@live.fr', // generated ethereal user
+				pass: 'ad&gjk456' // generated ethereal password
 			}
 		})
 		let mailOptions = {

@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom'
 import Button from 'components/CustomButtons/Button.jsx'
 import Tooltip from '@material-ui/core/Tooltip'
 import cover from './assets/img/cover.jpeg'
+
+
+
+
 class Home extends Component {
 	render() {
 		return (
@@ -23,7 +27,7 @@ class Home extends Component {
 				>
 					<div className="container">
 						<div className="row">
-							<div className="col-sm-7 col-sm-offset-3 text-center">
+							<div className="col-xs-6 col-xs-offset-3  text-center ">
 								<h1 className="title">Souhail SOUID</h1>
 								<h4 className="title">
 									{' '}

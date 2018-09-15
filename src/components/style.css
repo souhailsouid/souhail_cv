@@ -291,3 +291,13 @@ footer .social-buttons .btn {
   margin-top: 5px;
   margin-bottom: 5px;
 }
+<style>
+.h5special {
+    font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .h5special {
+        font-size: 2.5rem;
+    }
+}
