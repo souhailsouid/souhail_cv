@@ -96,8 +96,7 @@ class ProfilePage_fr extends React.Component {
 						<div className={classNames(classes.description, classes.textCenter)}>
 							<h5 className={classes.description}>
 								Perseverant, curious and hard-worker, this is my DNA. By the way, I am a developer
-								specialising in React and Material UI. Using the code to find solutions or create
-								something from scratch by working day and night, helps me to refocus on myself. In fact,
+								specialising in React and NodeJS. 
 								I am truly passionnate in achieving relevant targets . {' '}
 							</h5>
 						</div>
